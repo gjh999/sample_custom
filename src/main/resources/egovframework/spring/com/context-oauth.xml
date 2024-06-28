@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+        
+	<!-- GOOGLE OAuth Configuration -->
+	<bean id="googleAuthVO" class="egovframework.com.ext.oauth.service.OAuthVO">
+		<constructor-arg value="google" /><!-- Service Name -->
+		<constructor-arg value="googleClientID" /><!-- googleClientID -->
+		<constructor-arg value="googleClientSecret" /><!-- googleClientSecret -->
+		<constructor-arg value="http://localhost:8080/auth/google/callback" /><!-- googleRedirectUrl -->
+		<constructor-arg value="profile email" /><!-- googleScope -->
+	</bean>
+	
+	<!-- NAVER OAuth Configuration -->
+	<bean id="naverAuthVO" class="egovframework.com.ext.oauth.service.OAuthVO">
+		<constructor-arg value="naver" /><!-- Service Name -->
+		<constructor-arg value="naverClientID" /><!-- naverClientID -->
+		<constructor-arg value="naverClientSecret" /><!-- naverClientSecret -->
+		<constructor-arg value="http://127.0.0.1:8080/auth/naver/callback" /><!-- naverRedirectUrl -->
+		<constructor-arg value = "profile" /><!-- naverScope -->
+	</bean>
+	
+	<!-- KAKAO OAuth Configuration -->
+	<bean id="kakaoAuthVO" class="egovframework.com.ext.oauth.service.OAuthVO">
+		<constructor-arg value="kakao" /><!-- Service Name -->
+		<constructor-arg value="kakaoClientID" /><!-- kakaoClientID -->
+		<constructor-arg value="kakaoClientSecret" /><!-- kakaoClientSecret -->
+		<constructor-arg value="http://localhost:8080/auth/kakao/callback" /><!-- kakaoRedirectUrl -->
+		<constructor-arg value ="profile_nickname account_email" /><!-- kakaoScope -->
+	</bean>
+    
+</beans>
